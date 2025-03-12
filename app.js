@@ -47,10 +47,12 @@ FaqsElement.forEach((question,i)=>{
 
 let DownloadIconElement=document.querySelector(".DownloadFormIcon")
 let FormElement=document.querySelector(".Download-form")
+let ActiveCross=document.querySelector(".DownloadForm-Heading i")
 console.log(DownloadIconElement)
 DownloadIconElement.addEventListener("click",()=>{
-    console.log(FormElement)
     FormElement.classList.toggle("ShowDownload-form")
-    console.log(FormElement.classList)
+})
+ActiveCross.addEventListener("click",()=>{
+    FormElement.classList.remove("ShowDownload-form")
 })
 

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-
+html{
+    scroll-behavior: smooth;
+}
 *{
     margin: 0px;
     padding: 0px;
@@ -58,7 +60,11 @@
     font-family: "FontAwesome";
     font-size: 16px;
     font-weight: 700;
-    color: rgb(41, 41, 41);
+    color: rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+}
+.DownloadForm-Heading i:hover{
+    color: black;
 }
 .Download-form form{
     display: flex;
@@ -142,11 +148,6 @@
     letter-spacing: 2px;
     border: none;
 }
-
-
-
-
-
 .right-Side-feature-icon{
     position: fixed;
     top: 270px;
@@ -161,6 +162,12 @@
 .right-Side-feature-icon ul li a img{
     width: 40px;
     border-radius: 50%;
+}
+.right-Side-feature-icon ul li img{
+    transition: 0.7s;
+}
+.right-Side-feature-icon ul li img:hover{
+    transform: rotate(360deg);
 }
 header{
     width: 100%;
@@ -190,6 +197,7 @@ header nav ul{
     gap: 20px;
 }
 header nav ul li{
+
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
