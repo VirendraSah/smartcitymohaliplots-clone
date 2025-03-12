@@ -11,11 +11,11 @@ ChangeIcon.addEventListener("click", () => {
     }
 })
 
-let paragraphELement=document.querySelectorAll(".keyLocation")
+let paragraphELement=document.querySelectorAll(".landmark_location-Heading")
 paragraphELement.forEach((question,i)=>{
     question.addEventListener("click",()=>{
-      let Heading=question.firstElementChild.firstElementChild
-      let paragraph=question.lastElementChild
+      let Heading=question.firstElementChild
+      let paragraph=question.nextElementSibling
       paragraph.classList.toggle("ShowparaLandmarkLocation")
        if(Heading.outerHTML=='<i class="fa-solid fa-minus"></i>'){
         Heading.outerHTML='<i class="fa-solid fa-plus"></i>'
@@ -27,19 +27,30 @@ paragraphELement.forEach((question,i)=>{
     })
 })
 
-let FaqsElement=document.querySelectorAll(".FAQs_QA")
+let FaqsElement=document.querySelectorAll(".FAQs_Q")
 
 FaqsElement.forEach((question,i)=>{
     question.addEventListener("click",()=>{
-        question.lastElementChild.classList.toggle("FAQsShowAns")
-        let icon=question.firstElementChild.firstElementChild
+        // question.lastElementChild.classList.toggle("FAQsShowAns")
+        let icon=question.firstElementChild
         if(icon.outerHTML.includes('<i class="fa-solid fa-minus"></i>')){
             icon.outerHTML='<i class="fa-solid fa-plus"></i>'
+            question.nextElementSibling.classList.add("FAQsShowAns")
         }
         else{
             icon.outerHTML='<i class="fa-solid fa-minus"></i>'
+            question.nextElementSibling.classList.remove("FAQsShowAns")
         }
         
     })
+})
+
+let DownloadIconElement=document.querySelector(".DownloadFormIcon")
+let FormElement=document.querySelector(".Download-form")
+console.log(DownloadIconElement)
+DownloadIconElement.addEventListener("click",()=>{
+    console.log(FormElement)
+    FormElement.classList.toggle("ShowDownload-form")
+    console.log(FormElement.classList)
 })
 

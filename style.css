@@ -24,9 +24,132 @@
     --fade-black-background:#eaeaea;
     --box-shadow:0 25px 50px -12px rgba(0,0,0,.5);
 }
+
+.Download-form{
+    max-width: 500px;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    transform: translatex(-50%);
+    z-index: 101;
+    background: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    transition: 1s;
+}
+.ShowDownload-form{
+    top: 10%;
+}
+.DownloadForm-Heading{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-bottom: 1px solid rgba(61, 60, 60, 0.203);
+    padding: 20px 20px 20px 20px;
+
+}
+.DownloadForm-Heading h2{
+    font-size: 19px;
+    font-weight: 400;
+    line-height: 27px;
+    color: rgb(41, 41, 41);
+}
+.DownloadForm-Heading i{
+    font-family: "FontAwesome";
+    font-size: 16px;
+    font-weight: 700;
+    color: rgb(41, 41, 41);
+}
+.Download-form form{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px;
+}
+.Download-form form>p{
+    font-weight: 400;
+    color: rgb(174, 180, 185);
+    line-height: 25px;
+    font-size: 14px;
+    text-align: center;
+}
+.Download-form form input{
+    width: 100%;
+    height: 40px;
+    padding: 10px;
+    background: #f0f4f5;
+    border:1px solid rgba(61, 60, 60, 0.203);
+    outline: none;
+}
+.Download-form form input::placeholder{
+    text-transform: uppercase;
+    font-weight: 500;
+    line-height: 20px;
+    font-size: 14px;
+    color: rgb(85, 85, 85);
+}
+.phoneNumber-DownloadForm{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+}
+.countryCode{
+    width: auto;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    gap: 5px;
+    background: rgba(0, 0, 0, 0.07);
+    padding: 5px 7px 5px 5px;
+}
+.countryCode p{
+    font-weight: 400;
+    font-size: 14px;
+    color: var(--black-color);
+    line-height: 25px;
+}
+.countryCode i{
+    font-family: "FontAwesome";
+    font-weight: 400;
+    color: var(--black-color);
+    font-size: 14px;
+    line-height: 25px;
+}
+.phoneNumber-DownloadForm input{
+    border: none !important;
+    outline: none !important;
+}
+.Download-form form textarea{
+    width: 100%;
+    height: 150px;
+    resize: none;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 10px;
+    outline: none;
+    background: #f0f4f5;
+}
+.Download-form form textarea::placeholder{
+    text-transform: uppercase;
+}
+.Download-form form #submitbtn{
+    width: 100%;
+    height: 50px;
+    padding: 10px 25px;
+    background: var(--Green-color);
+    font-weight: 500;
+    color: var(--white-color);
+    font-size: 15px;
+    letter-spacing: 2px;
+    border: none;
+}
+
+
+
+
+
 .right-Side-feature-icon{
     position: fixed;
-    top: 320px;
+    top: 270px;
     right: 10px;
     z-index: 999;
 }
@@ -846,6 +969,7 @@ figcaption{
     align-items: center;
     justify-content: flex-start;
     gap: 5px;
+    border-bottom: 1px solid;
 }
 .landmark_location-Heading i{
     font-size: 19px;
@@ -991,6 +1115,8 @@ figcaption{
     align-items: center;
     justify-content: flex-start;
     gap: 5px;
+    cursor: pointer;
+    border-bottom: 1px solid;
 }
 .FAQs_Q i{
     font-weight: 600;
@@ -1018,4 +1144,293 @@ figcaption{
 }
 .FAQsShowAns{
     display: block !important;
+}
+
+#ProjectGallery{
+    width: 100%;
+    height: auto;
+    padding: 50px 10px;
+}
+.ProjectGallery-Wrapper{
+    max-width: 1170px;
+    height: auto;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 30px;
+
+}
+.ProjectGallery-Wrapper h2{
+    font-size: 30px;
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    text-align: center;
+    text-transform: uppercase;
+}
+.ProjectGallery-Wrapper figure{
+    width: 98%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+.ProjectGallery-Wrapper figure img{
+    display: block;
+    width: 270px;
+    height: 270px;
+    
+}
+#LoanFacility{
+    width: 100%;
+    height: auto;
+    padding: 50px 10px;
+
+}
+.LoanFacility-Wrapper{
+    max-width: 1170px;
+    height: auto;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+.LoanFacility-Header{
+    width: 100%;
+    text-align: center;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    gap: 10px;
+}
+.LoanFacility-Header h2{
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--dark-blue);
+    line-height: 40px;
+}
+.LoanFacility-Header p{
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 28px;
+    color: var(--black-color);
+}
+.BankLogo{
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    row-gap: 20px;
+    column-gap: 5px;
+    
+}
+.BankLogo li{
+    box-shadow:0px 0px 10px 3px #ccc;
+    padding: 15px;
+}
+.BankLogo li img{
+    max-width: 140px;
+}
+#ScheduleVisit{
+    width: 100%;
+    height: auto;
+    padding: 50px 10px;
+    background: var(--fade-black-background);
+}
+.ScheduleVisit-Wrapper{
+    max-width: 1170px;
+    height: auto;
+    border: 5px solid #0886c7;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 2%;
+}
+.ScheduleVisit-Wrapper aside{
+    flex-basis: 48%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+
+}
+.ScheduleVisit-left img{
+    display: block;
+    width: 100%;
+}
+.ScheduleVisit-right{
+    gap: 20px;
+    align-items: center;
+    justify-content: center;
+}
+.ScheduleVisit-right-Heading{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.ScheduleVisit-right h2{
+    font-weight: 700;
+    font-size: 28px;
+    line-height: 48px;
+    color: var(--dark-blue);
+    text-transform: uppercase;
+}
+.ScheduleVisit-right p{
+    font-weight: 400;
+    line-height: 25px;
+    font-size: 14px;
+    color: var(--black-color);
+}
+.ScheduleVisit-Button{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 15px;
+}
+.ScheduleVisit-Button button{
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 25px;
+    color: var(--white-color);
+    background: var(--Green-color);
+    border: none;
+    padding: 15px 25px;
+    cursor: pointer;
+}
+.ScheduleVisit-Button button:first-child::before{
+    content: "\f095";
+    font-family: "FontAwesome";
+    margin-right: 10px;
+}
+.ScheduleVisit-Button button:last-child::before{
+    content: '\f133';
+    font-family: "FontAwesome";
+    margin-right: 10px;
+}
+
+footer{
+    width: 100%;
+    height: auto;
+    background: var(--dark-blue);
+    padding: 50px 10px 80px 10px;
+}
+.footer-Wrapper{
+    max-width: 1170px;
+    margin: 0px auto;
+    display: flex;
+    flex-direction: column;
+    gap: 70px;
+
+}
+.footer-Wrapper aside:first-child{
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    align-items: flex-start;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.footer-Wrapper aside div{
+    flex-basis: 40%;
+}
+.footer-Wrapper aside div:first-child{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 5px;
+}
+.footer-Wrapper aside div:first-child p{
+    font-size: 23px;
+    font-weight: 600;
+    line-height: 48px;
+    color: var(--white-color);
+
+}
+.footer-Wrapper aside div:last-child ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    gap: 5px;
+}
+.footer-Wrapper aside div:last-child ul li span{
+    font-weight: 700;
+    color: var(--white-color);
+    line-height: 28px;
+    font-size: 16px;
+}
+.footer-Wrapper aside div:last-child ul li{
+    font-size: 400;
+    color: rgb(254,254,254);
+    font-size: 16px;
+    line-height: 18px;
+}
+.footer-Wrapper aside:last-child{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+.footer-Wrapper aside:last-child h6{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(254,254,254);
+    line-height: 25px;
+}
+.footer-Wrapper aside:last-child a{
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(254,254,254);
+    line-height: 25px;
+}
+
+.footerButtons{
+    width: 100%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    background: rgb(242 179 6);
+    display: none;
+}
+.footerButtons ul{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+}
+.footerButtons ul li{
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.footerButtons ul li:first-child{
+    border-right: 1px solid rgb(254,254,254);
+}
+.footerButtons ul li:last-child{
+    border-left: 1px solid rgb(254,254,254);
+}
+.footerButtons ul li button{
+    padding: 10px 10px;
+    background: transparent;
+    border: none;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 36px;
 }
