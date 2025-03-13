@@ -1,8 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
-html{
+@import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=Mulish:ital,wght@0,200..1000;1,200..1000&display=swap');
+
+html {
     scroll-behavior: smooth;
 }
-*{
+
+* {
     margin: 0px;
     padding: 0px;
     text-decoration: none;
@@ -10,24 +12,38 @@ html{
     box-sizing: border-box;
     font-family: "Mulish", sans-serif;
 }
-:root{
-    --primary-color:rgb(0, 66, 130);
-    --Green-color:linear-gradient(to right, #4a9c46, #3db138, #40d954, #5cc044, #4b9f45);
-    --yello-gradient:linear-gradient(315deg, #f0af00 0%, #ffc820 74%);
-    --orange-color:#f3842f;
-    --dark-blue:#306598;
-    --black-color:#000;
-    --check-color:#337ab7;
-    --yellow-color:#ce9600;
-    --blue-border:#0886c7;
-    --white-color:#fefefe;
-    --background-color:#f8f8f8;
-    --border-color:#ccc;
-    --fade-black-background:#eaeaea;
-    --box-shadow:0 25px 50px -12px rgba(0,0,0,.5);
+
+:root {
+    --primary-color: rgb(0, 66, 130);
+    --Green-color: linear-gradient(to right, #4a9c46, #3db138, #40d954, #5cc044, #4b9f45);
+    --yello-gradient: linear-gradient(315deg, #f0af00 0%, #ffc820 74%);
+    --orange-color: #f3842f;
+    --dark-blue: #306598;
+    --black-color: #000;
+    --check-color: #337ab7;
+    --yellow-color: #ce9600;
+    --blue-border: #0886c7;
+    --white-color: #fefefe;
+    --background-color: #f8f8f8;
+    --border-color: #ccc;
+    --fade-black-background: #eaeaea;
+    --box-shadow: 0 25px 50px -12px rgba(0, 0, 0, .5);
 }
 
-.Download-form{
+.FullblackBackground {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background-color: #00000099;
+    z-index: 99;
+    display: none;
+}
+
+.BlackBackgroundShow {
+    display: block !important;
+}
+
+.Download-form {
     max-width: 500px;
     position: fixed;
     left: 50%;
@@ -36,13 +52,28 @@ html{
     z-index: 101;
     background: var(--white-color);
     border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,.5);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
     transition: 1s;
 }
-.ShowDownload-form{
+
+.EnquireNowForm {
+    max-width: 500px;
+    position: fixed;
+    left: 50%;
+    top: -100%;
+    transform: translatex(-50%);
+    z-index: 101;
+    background: var(--white-color);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, .5);
+    transition: 1s;
+}
+
+.ShowDownload-form {
     top: 10%;
 }
-.DownloadForm-Heading{
+
+.DownloadForm-Heading {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -50,56 +81,69 @@ html{
     padding: 20px 20px 20px 20px;
 
 }
-.DownloadForm-Heading h2{
+
+.DownloadForm-Heading h2 {
     font-size: 19px;
     font-weight: 400;
     line-height: 27px;
     color: rgb(41, 41, 41);
 }
-.DownloadForm-Heading i{
+
+.DownloadForm-Heading i {
     font-family: "FontAwesome";
     font-size: 16px;
     font-weight: 700;
     color: rgba(0, 0, 0, 0.2);
     cursor: pointer;
 }
-.DownloadForm-Heading i:hover{
+
+.DownloadForm-Heading i:hover {
     color: black;
 }
-.Download-form form{
+
+.Download-form form,
+.EnquireNowForm form {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 20px;
 }
-.Download-form form>p{
+
+.Download-form form>p,
+.EnquireNowForm form>p {
     font-weight: 400;
     color: rgb(174, 180, 185);
     line-height: 25px;
     font-size: 14px;
     text-align: center;
 }
-.Download-form form input{
+
+.Download-form form input,
+.EnquireNowForm form input {
     width: 100%;
     height: 40px;
     padding: 10px;
     background: #f0f4f5;
-    border:1px solid rgba(61, 60, 60, 0.203);
+    border: 1px solid rgba(61, 60, 60, 0.203);
     outline: none;
 }
-.Download-form form input::placeholder{
+
+.Download-form form input::placeholder,
+.EnquireNowForm form input::placeholder {
     text-transform: uppercase;
     font-weight: 500;
     line-height: 20px;
     font-size: 14px;
     color: rgb(85, 85, 85);
 }
-.phoneNumber-DownloadForm{
+
+.phoneNumber-DownloadForm {
     display: flex;
     flex-direction: row;
     border: 1px solid rgba(0, 0, 0, 0.2);
 }
-.countryCode{
+
+.countryCode {
     width: auto;
     height: 40px;
     display: flex;
@@ -108,24 +152,29 @@ html{
     background: rgba(0, 0, 0, 0.07);
     padding: 5px 7px 5px 5px;
 }
-.countryCode p{
+
+.countryCode p {
     font-weight: 400;
     font-size: 14px;
     color: var(--black-color);
     line-height: 25px;
 }
-.countryCode i{
+
+.countryCode i {
     font-family: "FontAwesome";
     font-weight: 400;
     color: var(--black-color);
     font-size: 14px;
     line-height: 25px;
 }
-.phoneNumber-DownloadForm input{
+
+.phoneNumber-DownloadForm input {
     border: none !important;
     outline: none !important;
 }
-.Download-form form textarea{
+
+.Download-form form textarea,
+.EnquireNowForm form textarea {
     width: 100%;
     height: 150px;
     resize: none;
@@ -134,10 +183,14 @@ html{
     outline: none;
     background: #f0f4f5;
 }
-.Download-form form textarea::placeholder{
+
+.Download-form form textarea::placeholder,
+.EnquireNowForm form textarea::placeholder {
     text-transform: uppercase;
 }
-.Download-form form #submitbtn{
+
+.Download-form form #submitbtn,
+.EnquireNowForm form #submitbtn {
     width: 100%;
     height: 50px;
     padding: 10px 25px;
@@ -148,28 +201,97 @@ html{
     letter-spacing: 2px;
     border: none;
 }
-.right-Side-feature-icon{
+
+.right-Side-feature-icon {
     position: fixed;
     top: 270px;
     right: 10px;
-    z-index: 999;
+    z-index: 9;
 }
-.right-Side-feature-icon ul{
+
+.right-Side-feature-icon ul {
     display: flex;
     flex-direction: column;
     gap: 5px;
 }
-.right-Side-feature-icon ul li a img{
+
+.right-Side-feature-icon ul li a img {
     width: 40px;
     border-radius: 50%;
 }
-.right-Side-feature-icon ul li img{
+
+.right-Side-feature-icon ul li img {
+    width: 40px;
+    border-radius: 50%;
     transition: 0.7s;
 }
-.right-Side-feature-icon ul li img:hover{
+
+.right-Side-feature-icon ul li img:hover {
     transform: rotate(360deg);
 }
-header{
+
+.right-Side-feature-icon ul li {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+}
+
+.right-Side-feature-icon ul li span {
+    position: absolute;
+    width: max-content;
+    height: 30px;
+    background: white;
+    border-radius: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    text-align: start;
+    padding: 0px 60px 0px 20px;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 11px;
+    color: rgb(30, 47, 81);
+    font-family: "EB Garamond", serif;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(0px);
+    transition: transform 1s ease, opacity 0.3s ease, visibility 0.3s ease;
+    border: 2px solid var(--fade-black-background);
+}
+
+.right-Side-feature-icon ul li:hover span {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-20px);
+}
+
+.right-Side-feature-icon ul li img {
+    z-index: 9;
+}
+
+.right-Side-feature-icon ul li a {
+    z-index: 9;
+}
+
+.fa-arrow-up {
+    position: fixed;
+    bottom: 50px;
+    right: 50px;
+    background-color: black;
+    color: white;
+    border-radius: 50px;
+    width: 50px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px !important;
+    display: none;
+    font-size: 30px;
+
+}
+
+header {
     width: 100%;
     height: auto;
     box-shadow: 0px 2px 10px 0px #ccc;
@@ -181,35 +303,39 @@ header{
     padding: 0px 50px;
     position: fixed;
     top: 0px;
-
-    z-index: 99;
+    z-index: 9;
     background: var(--white-color);
 }
-header figure img{
+
+header figure img {
     width: 120px;
     height: auto;
 }
-header nav ul{
+
+header nav ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 20px;
 }
-header nav ul li{
+
+header nav ul li {
 
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: flex-end;
 }
-header nav ul li a{
+
+header nav ul li a {
     color: var(--primary-color);
     font-size: 14px;
     font-weight: 800;
     text-align: right;
 }
-header nav ul button{
+
+header nav ul button {
     padding: 10px 25px;
     border: none;
     background: var(--Green-color);
@@ -218,38 +344,44 @@ header nav ul button{
     font-weight: 700;
     cursor: pointer;
 }
-header nav ul li:last-child{
+
+header nav ul li:last-child {
     border: 2px solid var(--orange-color);
     padding: 10px 25px;
-    
+
 }
-header nav ul li:last-child a{
+
+header nav ul li:last-child a {
     color: var(--orange-color);
 }
-.MenuIcon{
+
+.MenuIcon {
     display: none;
 }
 
 /* Banner section */
-#banner{
+#banner {
     width: 100%;
     max-height: auto;
     position: relative;
     background: var(--dark-blue);
     padding-top: 100px;
 }
-#banner figure{
+
+#banner figure {
     width: 100%;
     height: 100%;
 }
-#banner figure img{
+
+#banner figure img {
     width: 100%;
     max-height: 75vh;
     padding: 0px;
     margin: 0px;
     display: block;
-}    
-.banner-btn{
+}
+
+.banner-btn {
     width: 40px;
     height: auto;
     display: flex;
@@ -261,18 +393,21 @@ header nav ul li:last-child a{
     right: 50%;
     transform: translateX(50%);
 }
-.banner-btn button{
+
+.banner-btn button {
     width: 10px;
     height: 10px;
     border-radius: 50%;
     border: 1px solid white;
     background: transparent;
-} 
-#form_Outer{
+}
+
+#form_Outer {
     width: 100%;
     background: var(--dark-blue);
 }
-.form-wrapper{
+
+.form-wrapper {
     margin: 0px auto;
     padding: 30px 10px;
     max-width: 1170px;
@@ -281,15 +416,17 @@ header nav ul li:last-child a{
     align-items: flex-start;
     justify-content: center;
     row-gap: 10px;
-    
+
 }
-.form-wrapper h2{
+
+.form-wrapper h2 {
     font-weight: 400;
     font-size: 30px;
     line-height: 40px;
     color: var(--white-color);
 }
-.form-wrapper form{
+
+.form-wrapper form {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -297,42 +434,49 @@ header nav ul li:last-child a{
     justify-content: space-between;
     column-gap: 25px;
 }
-.form-wrapper form input{
+
+.form-wrapper form input {
     width: 270px;
     height: 50px;
     padding: 0px 10px;
 }
-.form-wrapper form input:last-child{
+
+.form-wrapper form input:last-child {
     text-transform: uppercase;
     font-size: 11px;
-   line-height: 36px;
-   font-weight: 700;
-   color: var(--white-color);
-   background: var(--Green-color);
-   border: none;
+    line-height: 36px;
+    font-weight: 700;
+    color: var(--white-color);
+    background: var(--Green-color);
+    border: none;
 
 }
-.form-wrapper form input::placeholder{
+
+.form-wrapper form input::placeholder {
     font-size: 14px;
     line-height: 20px;
     font-weight: 500;
     color: rgb(85, 85, 85);
 }
-.form-wrapper form input:focus{
+
+.form-wrapper form input:focus {
     outline: none;
     border: 1px solid var(--white-color);
 }
-.form-wrapper form input:last-child:focus{
+
+.form-wrapper form input:last-child:focus {
     outline: none;
     border: none;
 }
-#featureSlider{
+
+#featureSlider {
     width: 100%;
     height: auto;
     padding: 30px;
     background: var(--fade-black-background);
 }
-.featureSlider-Wrapper{
+
+.featureSlider-Wrapper {
     max-width: 1170px;
     height: auto;
     margin: auto;
@@ -351,32 +495,36 @@ header nav ul li:last-child a{
     justify-content: space-between;
     align-items: center;
 }
-.featureSlider-Wrapper h2{
+
+.featureSlider-Wrapper h2 {
     font-size: 30px;
     font-weight: 700;
     color: var(--dark-blue);
     line-height: 40px;
     text-align: center;
 }
-.featureSlider-Wrapper p{
+
+.featureSlider-Wrapper p {
     font-size: 16px;
     line-height: 28px;
     font-weight: 400;
     color: var(--black-color);
     text-align: center;
 }
-.featureSlider-Wrapper figure img{
+
+.featureSlider-Wrapper figure img {
     width: 33.33%;
     height: auto;
     padding: 20px 0px;
 }
 
-#ProjectOverview{
+#ProjectOverview {
     width: 100%;
     height: auto;
     padding: 50px 0px;
 }
-.ProjectOverview_wrapper{
+
+.ProjectOverview_wrapper {
     max-width: 1170px;
     height: auto;
     margin: 0px auto;
@@ -386,16 +534,19 @@ header nav ul li:last-child a{
     justify-content: space-between;
 
 }
-.ProjectOverview_wrapper figure{
+
+.ProjectOverview_wrapper figure {
     width: 48%;
-    max-height:530px ;
-    
+    max-height: 530px;
+
 }
-.ProjectOverview_wrapper img{
+
+.ProjectOverview_wrapper img {
     width: 100%;
     height: 100%;
 }
-.ProjectOverview_content{
+
+.ProjectOverview_content {
     width: 48%;
     display: flex;
     flex-direction: column;
@@ -403,32 +554,37 @@ header nav ul li:last-child a{
     align-items: flex-start;
 
 }
-.ProjectOverview_content h2{
+
+.ProjectOverview_content h2 {
     font-size: 28px;
     line-height: 48px;
     font-weight: 700;
     color: var(--dark-blue);
 }
-.ProjectOverview_content p{
+
+.ProjectOverview_content p {
     font-size: 14px;
     font-weight: 400;
     line-height: 25px;
     color: var(--black-color);
 }
-.ProjectOverview_content ul{
+
+.ProjectOverview_content ul {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
     gap: 5px;
 }
-.ProjectOverview_content ul li{
+
+.ProjectOverview_content ul li {
     font-size: 14px;
     font-weight: 400;
     color: var(--black-color);
     line-height: 25px;
 }
-.ProjectOverview_content ul li::before{
+
+.ProjectOverview_content ul li::before {
     content: '\f00c';
     font-family: "Font Awesome 5 Free";
     width: auto;
@@ -437,9 +593,10 @@ header nav ul li:last-child a{
     font-size: 12px;
     font-weight: 600;
     margin-right: 5px;
-color: var(--dark-blue);
+    color: var(--dark-blue);
 }
-.ProjectOverview_content button{
+
+.ProjectOverview_content button {
     border: none;
     background: var(--Green-color);
     font-size: 15px;
@@ -448,41 +605,47 @@ color: var(--dark-blue);
     font-weight: 600;
     padding: 10px 25px;
 }
-#MoreThenPlot{
+
+#MoreThenPlot {
     width: 100%;
     height: auto;
     padding: 50px 10px;
     background: var(--fade-black-background);
 }
-.MoreThenPlot_wrapper{
+
+.MoreThenPlot_wrapper {
     max-width: 1170px;
     height: auto;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
 }
-.MoreThenPlot_heading{
+
+.MoreThenPlot_heading {
     display: flex;
     flex-direction: column;
     gap: 20px;
     align-items: center;
     justify-content: center;
 }
-.MoreThenPlot_heading h2{
+
+.MoreThenPlot_heading h2 {
     font-size: 30px;
     font-weight: 700;
     line-height: 40px;
     color: var(--dark-blue);
     text-align: center;
 }
-.MoreThenPlot_heading p{
+
+.MoreThenPlot_heading p {
     font-size: 16px;
     line-height: 28px;
     color: var(--black-color);
     font-weight: 400;
     text-align: center;
 }
-.MoreThenPlot_features{
+
+.MoreThenPlot_features {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -490,15 +653,18 @@ color: var(--dark-blue);
     flex-wrap: wrap;
     gap: 3%;
 }
-.MTP{
+
+.MTP {
     flex-basis: 30%;
 }
-.MTP ul{
+
+.MTP ul {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.MTP ul li{
+
+.MTP ul li {
     display: flex;
     align-items: center;
     font-weight: 650;
@@ -508,19 +674,23 @@ color: var(--dark-blue);
     gap: 30px;
     text-transform: uppercase;
 }
-.MTP ul li img{
+
+.MTP ul li img {
     max-width: 100px;
 }
-.MTPThree ul li{
+
+.MTPThree ul li {
     flex-direction: row-reverse;
     text-align: right;
 }
-#RegistrationCertificate{
+
+#RegistrationCertificate {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 }
-.Registration_wrapper{
+
+.Registration_wrapper {
     max-width: 1170px;
     height: auto;
     margin: auto;
@@ -528,7 +698,8 @@ color: var(--dark-blue);
     flex-direction: column;
     gap: 15px;
 }
-.Registration_wrapper figure{
+
+.Registration_wrapper figure {
     width: 100%;
     height: auto;
     display: flex;
@@ -537,17 +708,19 @@ color: var(--dark-blue);
     justify-content: center;
     gap: 10px;
 }
-.Registration_wrapper figure img{
+
+.Registration_wrapper figure img {
     max-width: 250px;
 }
-.Registration_wrapper figure 
-figcaption{
+
+.Registration_wrapper figure figcaption {
     font-weight: 800;
     font-size: 14px;
     line-height: 25px;
     color: var(--black-color);
 }
-.Registration_Content{
+
+.Registration_Content {
     padding: 10px 0px;
     display: flex;
     flex-direction: column;
@@ -556,20 +729,23 @@ figcaption{
     gap: 10px;
 
 }
-.Registration_Content p{
+
+.Registration_Content p {
     font-weight: 400;
     font-size: 14px;
     line-height: 25px;
     color: var(--black-color);
 }
-.Registration_Content h3{
+
+.Registration_Content h3 {
     font-weight: 700;
     font-size: 14px;
     line-height: 25px;
     color: var(--black-color);
-    
+
 }
-.Registration_cards{
+
+.Registration_cards {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -577,7 +753,8 @@ figcaption{
     justify-content: space-between;
     padding: 20px 0px;
 }
-.Registration_card{
+
+.Registration_card {
     flex-basis: 23%;
     padding: 32px;
     display: flex;
@@ -587,25 +764,29 @@ figcaption{
     gap: 5px;
     box-shadow: 0px 0px 10px 3px #ccc;
 }
-.Registration_card h5{
+
+.Registration_card h5 {
     font-weight: 700;
     font-size: 32px;
     line-height: 40px;
     color: rgb(41, 41, 41);
 }
-.Registration_card span{
+
+.Registration_card span {
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
-    color: rgb(41,41,41);
+    color: rgb(41, 41, 41);
     text-transform: uppercase;
 }
-#PriceList{
+
+#PriceList {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 }
-.PriceList_wrapper{
+
+.PriceList_wrapper {
     max-width: 1170px;
     height: auto;
     margin: 0px auto;
@@ -615,31 +796,36 @@ figcaption{
     gap: 20px;
 
 }
-.PriceList_wrapper h2{
+
+.PriceList_wrapper h2 {
     font-size: 30px;
     line-height: 40px;
     font-weight: 700;
     color: var(--dark-blue);
     text-transform: uppercase;
 }
-.PriceList-content{
+
+.PriceList-content {
     width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
 }
-.PriceList-content hr{
+
+.PriceList-content hr {
     width: 100%;
 }
-.PriceList-content p{
+
+.PriceList-content p {
     font-weight: 700;
     font-size: 16px;
     line-height: 24px;
     color: var(--dark-blue);
 
 }
-.PriceList_wrapper table{
+
+.PriceList_wrapper table {
     width: 70%;
     height: 350px;
     text-align: center;
@@ -648,54 +834,65 @@ figcaption{
     border-right: 1px solid var(--fade-black-background);
     border-bottom: 1px solid var(--fade-black-background);
 }
-.PriceList_wrapper table tr:first-child{
+
+.PriceList_wrapper table tr:first-child {
     background: var(--dark-blue);
     border: none;
     border: 1px solid black;
 }
-.PriceList_wrapper table tr:first-child td{
+
+.PriceList_wrapper table tr:first-child td {
     padding: 0px 10px;
 }
-.PriceList_wrapper table tr:first-child h3{
+
+.PriceList_wrapper table tr:first-child h3 {
     font-weight: 700;
     line-height: 24px;
     font-size: 14px;
     color: var(--white-color);
 }
-.PriceList_wrapper table tr:first-child p{
+
+.PriceList_wrapper table tr:first-child p {
     font-size: 14px;
     font-weight: 400;
     line-height: 24px;
     color: var(--white-color);
 
 }
-.PriceList_wrapper table tr:nth-child(2){
+
+.PriceList_wrapper table tr:nth-child(2) {
     background: var(--dark-blue);
     border-bottom: 1px solid var(--fade-black-background);
 }
-.PriceList_wrapper table tr:nth-child(2) td:first-child{
+
+.PriceList_wrapper table tr:nth-child(2) td:first-child {
     border-right: 1px solid grey;
 }
-.PriceList_wrapper table tr:nth-child(2) td:last-child{
+
+.PriceList_wrapper table tr:nth-child(2) td:last-child {
     border-left: 1px solid grey;
 }
-.PriceList_wrapper table tr:nth-child(2) td{
+
+.PriceList_wrapper table tr:nth-child(2) td {
     font-size: 14px;
     font-weight: 700;
     color: var(--white-color);
     line-height: 24px;
 }
-.plotSize_Price td{
+
+.plotSize_Price td {
     font-size: 13px;
     font-weight: 700;
     line-height: 24px;
     color: var(--black-color);
     border: 1px solid var(--fade-black-background);
 }
-.plotSize_Price td:first-child{
+
+.plotSize_Price td:first-child {
     background: whitesmoke;
 }
-.plotSize_Price td:last-child a{
+
+.plotSize_Price td:last-child a {
     font-size: 13px;
     line-height: 24px;
     font-weight: 700;
@@ -704,16 +901,19 @@ figcaption{
     padding: 10px 5px;
     border-radius: 5px;
 }
-.PriceList_wrapper figure{
+
+.PriceList_wrapper figure {
     margin-top: 50px;
     width: 100%;
     max-height: 80vh;
 }
-.PriceList_wrapper figure img{
+
+.PriceList_wrapper figure img {
     width: 100%;
     max-height: 80vh;
 }
-#Highlights{
+
+#Highlights {
     width: 100%;
     height: auto;
     text-align: center;
@@ -724,10 +924,12 @@ figcaption{
     justify-content: center;
     gap: 30px;
 }
-#Highlights hr{
+
+#Highlights hr {
     width: 100%;
 }
-#Highlights h2{
+
+#Highlights h2 {
     text-transform: uppercase;
     font-weight: 700;
     color: var(--dark-blue);
@@ -735,7 +937,8 @@ figcaption{
     font-size: 30px;
 
 }
-.Highlights_wrapper{
+
+.Highlights_wrapper {
     max-width: 1320px;
     height: auto;
     margin: 0px auto;
@@ -745,7 +948,8 @@ figcaption{
     align-items: center;
     gap: 50px;
 }
-.Highlights_wrapper aside{
+
+.Highlights_wrapper aside {
     flex-grow: 1;
     min-height: 700px;
     display: flex;
@@ -754,16 +958,19 @@ figcaption{
     align-items: center;
     gap: 30px;
 }
-.Highlights_wrapper aside div{
+
+.Highlights_wrapper aside div {
     height: 150px;
 }
-.Highlights_wrapper aside div p{
+
+.Highlights_wrapper aside div p {
     font-size: 14px;
     line-height: 25px;
     color: var(--black-color);
     font-weight: 600;
 }
-.YelloBtn{
+
+.YelloBtn {
     width: 300px;
     padding: 15px 25px;
     font-weight: 700;
@@ -778,19 +985,21 @@ figcaption{
 
 }
 
-#VideoSection{
+#VideoSection {
     width: 100%;
     height: 100%;
     padding: 50px 10px;
 }
-.video_wrapper{
+
+.video_wrapper {
     max-width: 1170px;
     margin: auto;
     display: flex;
     flex-direction: column;
     gap: 30px;
 }
-.video-heading{
+
+.video-heading {
     width: 100%;
     height: auto;
     display: flex;
@@ -799,21 +1008,24 @@ figcaption{
     justify-content: center;
     gap: 15px;
 }
-.video-heading h2{
+
+.video-heading h2 {
     font-weight: 700;
     font-size: 30px;
     line-height: 40px;
     color: var(--dark-blue);
     text-transform: uppercase;
 }
-.video-heading p{
+
+.video-heading p {
     font-size: 16px;
     font-weight: 400;
     line-height: 28px;
     color: var(--black-color);
 
 }
-.video{
+
+.video {
     width: 100%;
     height: auto;
     display: flex;
@@ -822,16 +1034,19 @@ figcaption{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.iframe-video{
+
+.iframe-video {
     aspect-ratio: 16/9;
     width: 48%;
 }
-#site-Plan{
+
+#site-Plan {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 }
-.sitePlan-Wrapper{
+
+.sitePlan-Wrapper {
     max-width: 1170px;
     height: auto;
     margin: 0px auto;
@@ -841,43 +1056,51 @@ figcaption{
     justify-content: center;
     row-gap: 30px;
 }
-.SitePlan-Heading{
+
+.SitePlan-Heading {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.SitePlan-Heading h2{
+
+.SitePlan-Heading h2 {
     font-weight: 700;
     font-size: 30px;
     color: var(--dark-blue);
     line-height: 40px;
     text-transform: uppercase;
 }
-.SitePlan-Heading p{
+
+.SitePlan-Heading p {
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     color: var(--black-color);
     text-align: center;
 }
-.sitePlan-Wrapper figure{
+
+.sitePlan-Wrapper figure {
     max-width: 700px;
 }
-.sitePlan-Wrapper figure img{
+
+.sitePlan-Wrapper figure img {
     width: 100%;
     display: block;
 }
-.DownloadBrochureBtn{
+
+.DownloadBrochureBtn {
     margin-top: 40px;
 }
-#location{
+
+#location {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 }
-.location_wrapper{
+
+.location_wrapper {
     max-width: 1170px;
     height: auto;
     margin: 0px auto;
@@ -888,7 +1111,8 @@ figcaption{
     gap: 30px;
 
 }
-.locationHeading{
+
+.locationHeading {
     width: 100%;
     height: auto;
     display: flex;
@@ -897,50 +1121,59 @@ figcaption{
     justify-content: center;
     gap: 10px;
 }
-.locationHeading h2{
+
+.locationHeading h2 {
     font-weight: 700;
     font-size: 30px;
     color: var(--dark-blue);
     line-height: 40px;
     text-transform: uppercase;
 }
-.locationHeading p{
+
+.locationHeading p {
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     color: var(--black-color);
     text-align: center;
 }
-.location_wrapper figure{
+
+.location_wrapper figure {
     max-width: 700px;
     height: auto;
 }
-.location_wrapper figure img{
+
+.location_wrapper figure img {
     width: 100%;
     height: auto;
 }
-#map{
+
+#map {
     width: 100%;
     height: auto;
     margin: 50px 0px;
 }
-.map_wrapper{
+
+.map_wrapper {
     width: 95%;
     height: auto;
     margin: 0px auto;
 }
-.map_wrapper iframe{
+
+.map_wrapper iframe {
     aspect-ratio: 16/4;
     width: 100%;
     height: auto;
-    border:none
+    border: none
 }
-#Landmarks{
+
+#Landmarks {
     width: 100%;
     height: auto;
     padding: 50px 20px;
 }
-.landmarks-Wrapper{
+
+.landmarks-Wrapper {
     max-width: 1000px;
     height: auto;
     margin: 0px auto;
@@ -948,7 +1181,8 @@ figcaption{
     flex-direction: column;
     gap: 30px;
 }
-.landmarks-Wrapper h2{
+
+.landmarks-Wrapper h2 {
     font-weight: 700;
     font-size: 30px;
     line-height: 40px;
@@ -956,7 +1190,8 @@ figcaption{
     text-transform: uppercase;
     text-align: center;
 }
-.landmark_location{
+
+.landmark_location {
     width: 100%;
     height: auto;
     display: flex;
@@ -964,14 +1199,16 @@ figcaption{
     gap: 10px;
 
 }
-.Landmarks-Content-Wrapper{
+
+.Landmarks-Content-Wrapper {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.landmark_location-Heading{
+
+.landmark_location-Heading {
     display: flex;
     flex-direction: row;
     align-items: center;
@@ -979,11 +1216,13 @@ figcaption{
     gap: 5px;
     border-bottom: 1px solid;
 }
-.landmark_location-Heading i{
+
+.landmark_location-Heading i {
     font-size: 19px;
-    color: rgb(41,41,41);
+    color: rgb(41, 41, 41);
 }
-.landmark_location-Heading h3{
+
+.landmark_location-Heading h3 {
     font-weight: 400;
     color: rgb(41, 41, 41);
     font-size: 19px;
@@ -991,7 +1230,8 @@ figcaption{
     text-transform: uppercase;
     cursor: pointer;
 }
-.landmark_location p{
+
+.landmark_location p {
     font-weight: 400;
     color: var(--black-color);
     line-height: 25px;
@@ -999,15 +1239,18 @@ figcaption{
     padding-top: 10px;
     display: none;
 }
-.ShowparaLandmarkLocation{
+
+.ShowparaLandmarkLocation {
     display: block !important;
 }
-#Amenities{
+
+#Amenities {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 }
-.amenities-Wrapper{
+
+.amenities-Wrapper {
     max-width: 1170px;
     height: auto;
     margin: 0px auto;
@@ -1017,7 +1260,8 @@ figcaption{
     justify-content: center;
     gap: 30px;
 }
-.amenities-header{
+
+.amenities-header {
     width: 100%;
     height: auto;
     display: flex;
@@ -1026,19 +1270,22 @@ figcaption{
     align-items: center;
     justify-content: center;
 }
-.amenities-header h2{
+
+.amenities-header h2 {
     font-weight: 700;
     font-size: 30px;
     line-height: 40px;
     color: var(--dark-blue);
 }
-.amenities-header p{
+
+.amenities-header p {
     font-weight: 400;
     color: var(--black-color);
     font-size: 16px;
     line-height: 28px;
 }
-.amenities-cards{
+
+.amenities-cards {
     width: 100%;
     height: auto;
     display: flex;
@@ -1048,7 +1295,8 @@ figcaption{
     justify-content: center;
     row-gap: 20px;
 }
-.amenities-cards div{
+
+.amenities-cards div {
     width: 200px;
     height: 130px;
     display: flex;
@@ -1057,10 +1305,12 @@ figcaption{
     justify-content: flex-start;
     gap: 5px;
 }
-.amenities-cards div figure img{
+
+.amenities-cards div figure img {
     display: block;
 }
-.amenities-cards div p{
+
+.amenities-cards div p {
     text-transform: capitalize;
     font-size: 19px;
     line-height: 32px;
@@ -1069,12 +1319,13 @@ figcaption{
     text-align: center;
 }
 
-#FAQs{
+#FAQs {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 }
-.FAQs-wrapper{
+
+.FAQs-wrapper {
     max-width: 1000px;
     height: auto;
     margin: auto;
@@ -1082,33 +1333,38 @@ figcaption{
     flex-direction: column;
     gap: 40px;
 }
-.FAQs-Heading{
+
+.FAQs-Heading {
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     gap: 10px;
 }
-.FAQs-Heading h2{
+
+.FAQs-Heading h2 {
     font-weight: 700;
     font-size: 30px;
     line-height: 40px;
     color: var(--dark-blue);
 }
-.FAQs-Heading p{
+
+.FAQs-Heading p {
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     color: var(--black-color);
 }
-.FAQs_QA-Wrapper{
+
+.FAQs_QA-Wrapper {
     width: 100%;
     height: auto;
     display: flex;
     flex-direction: column;
     gap: 25px;
 }
-.FAQs_QA{
+
+.FAQs_QA {
     width: 100%;
     height: auto;
     display: flex;
@@ -1117,7 +1373,8 @@ figcaption{
     justify-content: center;
     gap: 10px;
 }
-.FAQs_Q{
+
+.FAQs_Q {
     width: 100%;
     display: flex;
     align-items: center;
@@ -1126,23 +1383,27 @@ figcaption{
     cursor: pointer;
     border-bottom: 1px solid;
 }
-.FAQs_Q i{
+
+.FAQs_Q i {
     font-weight: 600;
     font-size: 16px;
     line-height: 25px;
     color: var(--black-color);
 
 }
-.FAQs_Q h3{
+
+.FAQs_Q h3 {
     font-size: 19px;
     font-weight: 400;
     line-height: 32px;
-    color: rgb(41,41,41);
+    color: rgb(41, 41, 41);
 }
-.FAQs_QA hr{
+
+.FAQs_QA hr {
     width: 100%;
 }
-.FAQs_QA p{
+
+.FAQs_QA p {
     font-weight: 400;
     color: var(--black-color);
     line-height: 25px;
@@ -1150,16 +1411,18 @@ figcaption{
     display: none;
 
 }
-.FAQsShowAns{
+
+.FAQsShowAns {
     display: block !important;
 }
 
-#ProjectGallery{
+#ProjectGallery {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 }
-.ProjectGallery-Wrapper{
+
+.ProjectGallery-Wrapper {
     max-width: 1170px;
     height: auto;
     margin: 0px auto;
@@ -1170,7 +1433,8 @@ figcaption{
     gap: 30px;
 
 }
-.ProjectGallery-Wrapper h2{
+
+.ProjectGallery-Wrapper h2 {
     font-size: 30px;
     line-height: 40px;
     font-weight: 700;
@@ -1178,26 +1442,30 @@ figcaption{
     text-align: center;
     text-transform: uppercase;
 }
-.ProjectGallery-Wrapper figure{
+
+.ProjectGallery-Wrapper figure {
     width: 98%;
     height: auto;
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
 }
-.ProjectGallery-Wrapper figure img{
+
+.ProjectGallery-Wrapper figure img {
     display: block;
     width: 270px;
     height: 270px;
-    
+
 }
-#LoanFacility{
+
+#LoanFacility {
     width: 100%;
     height: auto;
     padding: 50px 10px;
 
 }
-.LoanFacility-Wrapper{
+
+.LoanFacility-Wrapper {
     max-width: 1170px;
     height: auto;
     margin: auto;
@@ -1205,7 +1473,8 @@ figcaption{
     flex-direction: column;
     gap: 40px;
 }
-.LoanFacility-Header{
+
+.LoanFacility-Header {
     width: 100%;
     text-align: center;
     display: flex;
@@ -1213,19 +1482,22 @@ figcaption{
     flex-direction: column;
     gap: 10px;
 }
-.LoanFacility-Header h2{
+
+.LoanFacility-Header h2 {
     font-size: 30px;
     font-weight: 700;
     color: var(--dark-blue);
     line-height: 40px;
 }
-.LoanFacility-Header p{
+
+.LoanFacility-Header p {
     font-weight: 400;
     font-size: 16px;
     line-height: 28px;
     color: var(--black-color);
 }
-.BankLogo{
+
+.BankLogo {
     width: 100%;
     height: auto;
     display: flex;
@@ -1234,22 +1506,26 @@ figcaption{
     justify-content: space-between;
     row-gap: 20px;
     column-gap: 5px;
-    
+
 }
-.BankLogo li{
-    box-shadow:0px 0px 10px 3px #ccc;
+
+.BankLogo li {
+    box-shadow: 0px 0px 10px 3px #ccc;
     padding: 15px;
 }
-.BankLogo li img{
+
+.BankLogo li img {
     max-width: 140px;
 }
-#ScheduleVisit{
+
+#ScheduleVisit {
     width: 100%;
     height: auto;
     padding: 50px 10px;
     background: var(--fade-black-background);
 }
-.ScheduleVisit-Wrapper{
+
+.ScheduleVisit-Wrapper {
     max-width: 1170px;
     height: auto;
     border: 5px solid #0886c7;
@@ -1259,7 +1535,8 @@ figcaption{
     flex-wrap: wrap;
     gap: 2%;
 }
-.ScheduleVisit-Wrapper aside{
+
+.ScheduleVisit-Wrapper aside {
     flex-basis: 48%;
     display: flex;
     flex-direction: column;
@@ -1268,34 +1545,40 @@ figcaption{
     padding: 20px;
 
 }
-.ScheduleVisit-left img{
+
+.ScheduleVisit-left img {
     display: block;
     width: 100%;
 }
-.ScheduleVisit-right{
+
+.ScheduleVisit-right {
     gap: 20px;
     align-items: center;
     justify-content: center;
 }
-.ScheduleVisit-right-Heading{
+
+.ScheduleVisit-right-Heading {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.ScheduleVisit-right h2{
+
+.ScheduleVisit-right h2 {
     font-weight: 700;
     font-size: 28px;
     line-height: 48px;
     color: var(--dark-blue);
     text-transform: uppercase;
 }
-.ScheduleVisit-right p{
+
+.ScheduleVisit-right p {
     font-weight: 400;
     line-height: 25px;
     font-size: 14px;
     color: var(--black-color);
 }
-.ScheduleVisit-Button{
+
+.ScheduleVisit-Button {
     width: 100%;
     display: flex;
     flex-direction: row;
@@ -1304,7 +1587,8 @@ figcaption{
     justify-content: flex-start;
     gap: 15px;
 }
-.ScheduleVisit-Button button{
+
+.ScheduleVisit-Button button {
     font-size: 18px;
     font-weight: 600;
     line-height: 25px;
@@ -1314,24 +1598,27 @@ figcaption{
     padding: 15px 25px;
     cursor: pointer;
 }
-.ScheduleVisit-Button button:first-child::before{
+
+.ScheduleVisit-Button button:first-child::before {
     content: "\f095";
     font-family: "FontAwesome";
     margin-right: 10px;
 }
-.ScheduleVisit-Button button:last-child::before{
+
+.ScheduleVisit-Button button:last-child::before {
     content: '\f133';
     font-family: "FontAwesome";
     margin-right: 10px;
 }
 
-footer{
+footer {
     width: 100%;
     height: auto;
     background: var(--dark-blue);
     padding: 50px 10px 80px 10px;
 }
-.footer-Wrapper{
+
+.footer-Wrapper {
     max-width: 1170px;
     margin: 0px auto;
     display: flex;
@@ -1339,7 +1626,8 @@ footer{
     gap: 70px;
 
 }
-.footer-Wrapper aside:first-child{
+
+.footer-Wrapper aside:first-child {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -1347,23 +1635,27 @@ footer{
     justify-content: space-between;
     flex-wrap: wrap;
 }
-.footer-Wrapper aside div{
+
+.footer-Wrapper aside div {
     flex-basis: 40%;
 }
-.footer-Wrapper aside div:first-child{
+
+.footer-Wrapper aside div:first-child {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     gap: 5px;
 }
-.footer-Wrapper aside div:first-child p{
+
+.footer-Wrapper aside div:first-child p {
     font-size: 23px;
     font-weight: 600;
     line-height: 48px;
     color: var(--white-color);
 
 }
-.footer-Wrapper aside div:last-child ul{
+
+.footer-Wrapper aside div:last-child ul {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -1371,38 +1663,43 @@ footer{
     text-align: center;
     gap: 5px;
 }
-.footer-Wrapper aside div:last-child ul li span{
+
+.footer-Wrapper aside div:last-child ul li span {
     font-weight: 700;
     color: var(--white-color);
     line-height: 28px;
     font-size: 16px;
 }
-.footer-Wrapper aside div:last-child ul li{
+
+.footer-Wrapper aside div:last-child ul li {
     font-size: 400;
-    color: rgb(254,254,254);
+    color: rgb(254, 254, 254);
     font-size: 16px;
     line-height: 18px;
 }
-.footer-Wrapper aside:last-child{
+
+.footer-Wrapper aside:last-child {
     display: flex;
     align-items: center;
     justify-content: center;
     flex-direction: column;
 }
-.footer-Wrapper aside:last-child h6{
+
+.footer-Wrapper aside:last-child h6 {
     font-weight: 400;
     font-size: 14px;
-    color: rgb(254,254,254);
-    line-height: 25px;
-}
-.footer-Wrapper aside:last-child a{
-    font-weight: 400;
-    font-size: 14px;
-    color: rgb(254,254,254);
+    color: rgb(254, 254, 254);
     line-height: 25px;
 }
 
-.footerButtons{
+.footer-Wrapper aside:last-child a {
+    font-weight: 400;
+    font-size: 14px;
+    color: rgb(254, 254, 254);
+    line-height: 25px;
+}
+
+.footerButtons {
     width: 100%;
     position: fixed;
     bottom: 0px;
@@ -1410,25 +1707,30 @@ footer{
     background: rgb(242 179 6);
     display: none;
 }
-.footerButtons ul{
+
+.footerButtons ul {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
 }
-.footerButtons ul li{
+
+.footerButtons ul li {
     flex-grow: 1;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.footerButtons ul li:first-child{
-    border-right: 1px solid rgb(254,254,254);
+
+.footerButtons ul li:first-child {
+    border-right: 1px solid rgb(254, 254, 254);
 }
-.footerButtons ul li:last-child{
-    border-left: 1px solid rgb(254,254,254);
+
+.footerButtons ul li:last-child {
+    border-left: 1px solid rgb(254, 254, 254);
 }
-.footerButtons ul li button{
+
+.footerButtons ul li button {
     padding: 10px 10px;
     background: transparent;
     border: none;

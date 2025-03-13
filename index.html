@@ -11,53 +11,94 @@
 </head>
 
 <body>
-        <div class="Download-form">
-            <div class="DownloadForm-Heading">
-                <h2>Download Brochure</h2>
-                <i class="fa-solid fa-xmark"></i>
-            </div>
-            <form action="">
-                <p>
-                    Feel free to contact us if you need any assistance, any help or another question.
-                </p>
-                <input type="text" placeholder="Name">
-                <input type="email" placeholder="email">
-                <div class="phoneNumber-DownloadForm">
-                    <div class="countryCode">
-                        <img src="images/flag.png" alt="INFlag">
-                        <p>+91</p> 
-                        <i class="fa-solid fa-caret-down"></i>
-                    </div>
-                    <input type="tel" placeholder="phone number" id="Tel">
-                </div>
-                <textarea name="textarea" id="" placeholder="message"></textarea>
-                <input type="submit" value="SEND" id="submitbtn">
-            </form>
+    <div class="FullblackBackground"></div>
+    <div class="EnquireNowForm">
+        <div class="DownloadForm-Heading">
+            <h2>Enquire Now</h2>
+            <i class="fa-solid fa-xmark"></i>
         </div>
-    
+        <form action="">
+            <p>
+                Feel free to contact us if you need any assistance, any help or another question.
+            </p>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="email">
+            <div class="phoneNumber-DownloadForm">
+                <div class="countryCode">
+                    <img src="images/flag.png" alt="INFlag">
+                    <p>+91</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <input type="tel" placeholder="phone number" id="Tel">
+            </div>
+            <textarea name="textarea" id="" placeholder="message"></textarea>
+            <input type="submit" value="SEND" id="submitbtn">
+        </form>
+    </div>
+    <div class="Download-form">
+        <div class="DownloadForm-Heading">
+            <h2>Download Brochure</h2>
+            <i class="fa-solid fa-xmark"></i>
+        </div>
+        <form action="">
+            <p>
+                Feel free to contact us if you need any assistance, any help or another question.
+            </p>
+            <input type="text" placeholder="Name">
+            <input type="email" placeholder="email">
+            <div class="phoneNumber-DownloadForm">
+                <div class="countryCode">
+                    <img src="images/flag.png" alt="INFlag">
+                    <p>+91</p>
+                    <i class="fa-solid fa-caret-down"></i>
+                </div>
+                <input type="tel" placeholder="phone number" id="Tel">
+            </div>
+            <textarea name="textarea" id="" placeholder="message"></textarea>
+            <input type="submit" value="SEND" id="submitbtn">
+        </form>
+    </div>
     <div class="right-Side-feature-icon">
         <ul>
-            <li><a href="#form_Outer">
+            <li>
+                <span>Book a site visit</span>
+                <a href="#form_Outer">
                     <img src="images/enquiry.webp" alt="Enquiry">
-                </a></li>
-            <li><a href="#">
+                </a>
+            </li>
+            <li>
+                <span>Whatsaap</span>
+                <a href="#">
                     <img src="images/whatapp.webp" alt="Whatsaap">
-                </a></li>
-            <li><a href="#VideoSection">
+                </a>
+            </li>
+            <li>
+                <span>Walkthrough</span>
+                <a href="#VideoSection">
                     <img src="images/Walkthrough.webp" alt="Walkthrough">
-                </a></li>
-            <li><a href="#PriceList">
+                </a>
+            </li>
+            <li>
+                <span>price List</span>
+                <a href="#PriceList">
                     <img src="images/rupee.webp" alt="rupee">
-                </a></li>
-            <li><a href="#">
+                </a>
+            </li>
+            <li>
+                <span>call</span>
+                <a href="">
                     <img src="images/Call.webp" alt="Call">
-                </a></li>
-            <li class="DownloadFormIcon"><a href="#">
-                    <img src="images/Download.webp" alt="Download">
-                </a></li>
+                </a>
+            </li>
+            <li class="DownloadFormIcon">
+                <span>download Brochure</span>
+                <img src="images/Download.webp" alt="Download">
+            </li>
         </ul>
     </div>
-
+    <a href="#">
+        <i class="fa-solid fa-arrow-up" id="arrow"></i>
+    </a>
     <header>
         <figure>
             <img src="images/Logo.webp" alt="Logo">
@@ -74,7 +115,7 @@
                 <li><a href="#PriceList">Price List</a></li>
                 <li><a href="#ProjectGallery">Gallery</a></li>
                 <li><a href="#">Contact Us</a></li>
-                <li><a href="#"><button>Book Online</button></a></li>
+                <li class="BookonlineBTN"><button>Book Online</button></li>
                 <li><a href="#">Call us at: 9896216660</a></li>
             </ul>
         </nav>
@@ -405,7 +446,7 @@
                     </div>
                 </aside>
             </div>
-            <button class="YelloBtn">Book Site Visit</button>
+            <button class="YelloBtn BookSiteVisitBtn">Book Site Visit</button>
         </section>
         <section id="VideoSection">
             <div class="video_wrapper">
@@ -671,7 +712,9 @@
                     <div class="ScheduleVisit-right-Heading">
                         <h2>Schedule Your Site Visit</h2>
                         <p>
-                            If you are interested in a site visit, please contact us immediately or visit us at the following link to get assistance from our executives and learn more about our project and the benefits you will receive here with us.
+                            If you are interested in a site visit, please contact us immediately or visit us at the
+                            following link to get assistance from our executives and learn more about our project and
+                            the benefits you will receive here with us.
                         </p>
                     </div>
                     <div class="ScheduleVisit-Button">
